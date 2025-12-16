@@ -1,14 +1,20 @@
 Day 4: Script Execution Permissions
 
-ls -l
--rwxr-xr-- 1 user user 1234 Jun 1 12:00 myscript.sh
+Cambiar los permisos de ejecución de un archivo.
 
--   rwx   r-x   r--
-│    │     │     │
-│    │     │     └── otros (others)
-│    │     └──────── grupo (group)
-│    └────────────── dueño (user)
-└────────────────── tipo de archivo
+```bash
+ls -l
+
+-rwxr-xr-- 1 user user 1234 Jun 1 12:00 myscript.sh
+```
+
+
+-   rwx   r-x   r--  </br>
+│    │     │     │   </br>
+│    │     │     └── otros (others) </br>
+│    │     └──────── grupo (group) </br>
+│    └────────────── dueño (user) </br>
+└────────────────── tipo de archivo </br>
 
 Sintaxis
 chmod [quién][operador][permisos] archivo
@@ -45,4 +51,6 @@ Permisos
 | `x`   | execute | ejecutar     | entrar (`cd`)    |
 
 Ej:
+```bash
 chmod u=rwx,g=rx,o=rx archivo
+```
