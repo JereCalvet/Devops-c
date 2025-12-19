@@ -14,3 +14,11 @@ ssh usuario@server
 # Alternativa para especificar otra llave publica
 ssh-copy-id -i ~/.ssh/otra.pub usuario@server
 ```
+
+Troubleshooting:
+/usr/bin/ssh-copy-id: ERROR: No identities found
+Significa que no existe la llave publica en la ubicacion por defecto ~/.ssh/id_rsa.pub
+Generar la llave publica con:
+```bash
+ssh-keygen
+```
