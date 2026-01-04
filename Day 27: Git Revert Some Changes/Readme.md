@@ -1,0 +1,27 @@
+Day 27: Git Revert Some Changes
+
+Enunciado:
+The Nautilus application development team was working on a git repository /usr/src/kodekloudrepos/news present on Storage server in Stratos DC. However, they reported an issue with the recent commits being pushed to this repo. They have asked the DevOps team to revert repo HEAD to last commit. Below are more details about the task:
+
+In /usr/src/kodekloudrepos/news git repository, revert the latest commit ( HEAD ) to the previous commit (JFYI the previous commit hash should be with initial commit message ).
+
+Use revert news message (please use all small letters for commit message) for the new revert commit.
+
+Resolución:
+- Conectarse al servidor Storage en Stratos DC.
+```bash
+ssh natasha@ststor01
+```
+- Navegar al repositorio git.
+```bash
+cd /usr/src/kodekloudrepos/news
+```
+- Verificar el historial de commits para identificar el commit previo.
+```bash
+git log
+```
+- Revertir el último commit utilizando el mensaje especificado.
+```bash
+git revert $hash -m "revert news message"
+git push origin master
+``` 
