@@ -9,3 +9,38 @@ Create a post-update hook in this git repository so that whenever any changes ar
 
 Finally remember to push your changes.
 Note: Perform this task using the natasha user, and ensure the repository or existing directory permissions are not altered.
+
+Resolución:
+- SSh al server
+```bash
+ssh natasha@storage-server
+```
+- Navegar al repositorio bare y crear el hook post-update
+```bash
+cd /opt/cluster.git
+vi hooks/post-update
+# Contenido del hook:
+##!/bin/bash
+#cd "$(dirname "$0")/.."
+
+#HOY=$(date +'%Y-%m-%d')
+
+#for ref in "$@"
+#do
+#  if [ "$ref" = "refs/heads/master" ]; then
+#    git tag -a "release-$HOY" -m "Release $HOY"
+#  fi
+#done
+```
+- Probar el hook haciendo un push
+```bash
+cd /usr/src/kodekloudrepos
+git checkout master
+git merge feature
+git push origin master
+```
+- Verificar que el tag se haya creado
+```bash
+git pull origin master
+git tag -l
+```
