@@ -1,0 +1,20 @@
+services:
+  web:
+    image: php:apache
+    container_name: php_host
+    ports:
+      - "6100:80"
+    volumes:
+      - /var/www/html:/var/www/html
+  database:
+    image: mariadb:latest
+    container_name: mysql_host
+    ports:
+      - "3307:3306"
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: database_host
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root_password
