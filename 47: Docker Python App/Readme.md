@@ -17,18 +17,18 @@ Enunciado:
 Resolución:
 ```bash
 ssh tony@stapp01
-cd /python_app/src/
+cd /python_app
 sudo touch Dockerfile
 sudo vi Dockerfile
 # Contenido
 # FROM python:3.9-slim
 # WORKDIR /app
-# COPY . .
+# COPY ./src .
 # RUN pip install -r requirements.txt
 # ENTRYPOINT ["python"]
 # CMD ["server.py"]
 # EXPOSE 3002
 sudo docker build -t nautilus/python-app .
-sudo docker run -d --name pythonapp_nautilus -p 8094:300
+sudo docker run -d --name pythonapp_nautilus -p 8094:3002
 curl http://localhost:8094
 ```
