@@ -1,10 +1,10 @@
-# ☸️ Kubernetes – Cheat Sheet
+# Kubernetes – Cheat Sheet
 
-## 🧠 Conceptos base
+## Conceptos base
 
 ### 📦 Pod
 El objeto más pequeño de Kubernetes. Un Pod ejecuta uno o más **containers** que comparten red y almacenamiento.  
-👉 Kubernetes **no gestiona containers sueltos**, siempre los hace correr dentro de Pods.
+- Kubernetes **no gestiona containers sueltos**, siempre los hace correr dentro de Pods.
 
 **Comandos:**
 ```bash
@@ -17,7 +17,7 @@ kubectl delete pod <pod-name>
 ```
 ### 🏷️ Labels
 Metadatos clave/valor para identificar y agrupar recursos (pods, services, deployments).  
-👉 Se usan para selección, filtrado y conexión entre recursos.
+- Se usan para selección, filtrado y conexión entre recursos.
 
 **Comandos:**
 ```bash
@@ -27,7 +27,7 @@ kubectl label pod pod-httpd env=dev
 ```
 ### 🚀 Deployment
 Administra Pods de forma declarativa. Permite escalar (replicas), actualizaciones, alta disponibilidad y revertir aplicaciones sin tiempo de inactividad.  
-👉 En producción siempre se usa Deployment, no Pods sueltos.
+- En producción siempre se usa Deployment, no Pods sueltos.
 
 **Comandos:**
 ```bash
@@ -40,7 +40,7 @@ kubectl delete deployment <name>
 ```
 ### 🧰 ReplicaSet
 Se encarga de mantener la cantidad correcta de Pods en ejecución.  
-👉 Normalmente no se crea manualmente, lo maneja el Deployment.
+- Normalmente no se crea manualmente, lo maneja el Deployment.
 
 **Comandos:**
 ```bash
