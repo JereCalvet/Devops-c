@@ -115,6 +115,13 @@ kubectl get pvc
 kubectl describe pvc <name>
 kubectl delete pvc <name>
 ```
+
+#### Tipos comunes de Volumes:
+- emptyDir: Almacenamiento temporal que se borra al eliminar el Pod.
+- hostPath: Usa un directorio del nodo anfitrión.
+- persistentVolume: Recurso de almacenamiento en el cluster. Estos son aprovisionados por administradores o dinámicamente por el cluster y los pods los consumen a través de PVCs. Ej: un disco en la nube, NFS, etc. No pertenece a ningún Pod en particular.
+- persistentVolumeClaim: Solicitud de almacenamiento por parte de un Pod. Un PVC especifica tamaño, modo de acceso y otras características del almacenamiento que necesita el Pod. Esto se asocia a un PV disponible en el cluster.
+
 ### 🔍 Debugging 
 Estados comunes de error:  
 - CrashLoopBackOff: El contenedor falla repetidamente al iniciar.
