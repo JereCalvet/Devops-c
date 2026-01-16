@@ -44,15 +44,3 @@ kubectl describe pod secret-nautilus
 kubectl exec -it secret-container-nautilus -- cat /opt/cluster/password
 kubectl exec -it secret-container-nautilus -- cat /opt/cluster/license-number
 ```
-
-### v2, usando secrets
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: iron-db-secret
-  namespace: iron-namespace-devops
-type: Opaque
-data:
-  MYSQL_ROOT_PASSWORD: Q29tcGxleFJvb3RQYXNzMTIzIQ==
-  MYSQL_PASSWORD: Q29tcGxleFVzZXJQYXNzMTIzIQ==
