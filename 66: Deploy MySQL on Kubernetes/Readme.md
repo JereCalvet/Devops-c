@@ -106,7 +106,10 @@ spec:
               name: mysql-root-pass
               key: password
         - name: MYSQL_DATABASE
-          value: mydb
+          valueFrom:
+            secretKeyRef:
+              name: mysql-db-url
+              key: database
         - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
